@@ -28,7 +28,7 @@
 
         {#    navbar#}
         <nav class="navbar py-3 navbar-light navbar-expand-lg white-color pl-5 pr-5">
-            <a id="myLogo" href="#home" class="navbar-brand text-decoration-none"><span id="daniel">DA</span></a>
+            <a id="myLogo" href="#homePage" class="navbar-brand text-decoration-none"><span id="daniel">DA</span></a>
             <div class="navbar-toggler" data-toggle="collapse" data-target="#navbarLinks">
                 <div id="burger">
                     <div id="burger1"></div>
@@ -38,7 +38,7 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarLinks">
                 <ul id="navElements" class="navbar-nav">
-                    <li class="nav-item"><a href="#home" class="nav-link text-capitalize">HOME</a></li>
+                    <li class="nav-item"><a href="#homePage" class="nav-link text-capitalize activeLink">HOME</a></li>
                     <li class="nav-item"><a href="#portfolio" class="nav-link text-capitalize">MY WORK</a>
                     </li>
                     <li class="nav-item"><a href="#about" class="nav-link text-capitalize">ABOUT</a></li>
@@ -51,7 +51,7 @@
 
         {#    home#}
         {% for data in userProfile %}
-            <div id="home">
+            <div id="homePage">
                 <div class="container">
                     <div style="min-height: 100vh;" class="row align-items-center justify-content-center align-content-center">
                         <div class="col-12">
@@ -186,7 +186,7 @@
         <div class="container-fluid">
             <div class="row align-items-center justify-content-center" id="aboutRow" style="min-height: 85vh">
                 <div class="col-8 py-5 my-5">
-                    <h1 class="text-center white-color">ABOUT ME</h1>
+                    <h1 id="aboutMe" class="text-center white-color">ABOUT ME</h1>
                     <p class="text-center white-color">
                         I'm a passionate and creative web developer and software developer. I develop django powered
                         websites and python applications. I develop clean, user friendly and responsive web apps. I'm

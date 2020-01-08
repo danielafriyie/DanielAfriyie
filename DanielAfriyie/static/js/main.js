@@ -1,11 +1,11 @@
 let navBar = document.querySelector('#navHome nav');
 let logo = document.querySelector('#daniel');
 let links = document.querySelectorAll('#navElements li a');
-let home = document.querySelector('#home');
+let home = document.querySelector('#homePage');
 let myWork = document.querySelector('#portfolio');
 let about = document.querySelector('#about');
 let contact = document.querySelector('#contact');
-let homeLink = document.querySelector('a[href="#home"]');
+let homeLink = document.querySelector('#navElements li a[href="#homePage"]');
 let myWorkLink = document.querySelector('a[href="#portfolio"]');
 let aboutLink = document.querySelector('a[href="#about"]');
 let contactLink = document.querySelector('a[href="#contact"]');
@@ -29,10 +29,9 @@ window.onscroll = function () {
         $('#burger div').css('background', '#d6d6d6');
     }
 
-    if (window.pageYOffset > home.offsetTop && window.pageYOffset < (myWork.offsetTop - 150)) {
-        homeLink.classList.add('activeLink')
-    }
-    else {
+    if (window.pageYOffset >= home.offsetTop && window.pageYOffset < (myWork.offsetTop)) {
+        homeLink.classList.add('activeLink');
+    } else {
         homeLink.classList.remove('activeLink')
     }
 
@@ -40,7 +39,7 @@ window.onscroll = function () {
     if (window.pageYOffset >= myWork.offsetTop && window.pageYOffset < (about.offsetTop - 150)) {
         myWorkLink.classList.add('activeLink');
     } else {
-        myWorkLink.classList.remove('activeLink')
+        myWorkLink.classList.remove('activeLink');
     }
 
     // active nav link on (about) scroll
