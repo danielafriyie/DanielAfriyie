@@ -2,12 +2,12 @@ from django.contrib import admin
 from . import models
 
 
-class UserAdmin(admin.ModelAdmin):
+class ProfileAdmin(admin.ModelAdmin):
     list_display = ('id', 'intro', 'headline', 'date')
     list_display_links = ('id', 'intro')
 
 
-class WorkAdmin(admin.ModelAdmin):
+class MyWorkAdmin(admin.ModelAdmin):
     list_display = ('id', 'work_title', 'work_link', 'date')
     list_display_links = ('id', 'work_title')
     list_filter = ('date',)
@@ -15,5 +15,5 @@ class WorkAdmin(admin.ModelAdmin):
     list_per_page = 25
 
 
-admin.site.register(models.UserProfile, UserAdmin)
-admin.site.register(models.WorkPortfolio, WorkAdmin)
+admin.site.register(models.MyProfile, ProfileAdmin)
+admin.site.register(models.MyWorkPortfolio, MyWorkAdmin)

@@ -2,7 +2,7 @@ from django.db import models
 from datetime import datetime as dt
 
 
-class UserProfile(models.Model):
+class MyProfile(models.Model):
     intro = models.CharField(max_length=255)
     headline = models.CharField(max_length=255)
     facebook = models.CharField(max_length=255, blank=True)
@@ -12,13 +12,14 @@ class UserProfile(models.Model):
     instagram = models.CharField(max_length=255, blank=True)
     email = models.CharField(max_length=255)
     telephone = models.CharField(max_length=255)
+    about = models.TextField()
     date = models.DateTimeField(default=dt.now())
 
     def __str__(self):
         return self.intro
 
 
-class WorkPortfolio(models.Model):
+class MyWorkPortfolio(models.Model):
     work_title = models.CharField(max_length=255)
     work_details = models.TextField()
     work_link = models.CharField(max_length=255, blank=True)

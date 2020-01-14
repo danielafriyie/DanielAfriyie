@@ -5,7 +5,7 @@
 
     <style>
         #navHome {
-            background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, 0.9)), url("{% static 'img/bcg.jpg' %}") center/cover no-repeat fixed;
+            background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, 0.9)), url("{% static 'img/bcg.jpg' %}") center/cover no-repeat;
             /*background: linear-gradient(-60deg, #6c3 50%, #09f 50%);*/
         }
 
@@ -25,7 +25,6 @@
 
     {#    navbar and home#}
     <section id="navHome">
-
         {#    navbar#}
         <nav class="navbar py-3 navbar-light navbar-expand-lg white-color pl-5 pr-5">
             <a id="myLogo" href="#homePage" class="navbar-brand text-decoration-none"><span id="daniel">DA</span></a>
@@ -53,7 +52,8 @@
         {% for data in userProfile %}
             <div id="homePage">
                 <div class="container">
-                    <div style="min-height: 100vh;" class="row align-items-center justify-content-center align-content-center">
+                    <div style="min-height: 100vh;"
+                         class="row align-items-center justify-content-center align-content-center">
                         <div class="col-12">
                             {#                    Headline#}
                             <div id="intro" class="text-center white-color intro animated fadeInDownBig">
@@ -187,11 +187,11 @@
             <div class="row align-items-center justify-content-center" id="aboutRow" style="min-height: 85vh">
                 <div class="col-8 py-5 my-5">
                     <h1 id="aboutMe" class="text-center white-color">ABOUT ME</h1>
+                    {% for data in userProfile %}
                     <p class="text-center white-color">
-                        I'm a passionate and creative web developer and software developer. I develop django powered
-                        websites and python applications. I develop clean, user friendly and responsive web apps. I'm
-                        also skilled in other fields like Computerised Accounting, Microsoft Office Suite.
+                        {{ data.about }}
                     </p>
+                    {% endfor %}
                 </div>
             </div>
         </div>
