@@ -10,7 +10,7 @@
         }
 
         #aboutRow {
-            background: url("{% static 'img/bcg2.jpg' %}") center/cover no-repeat fixed;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("{% static 'img/about.jpg' %}") center/cover no-repeat fixed;
             /*background: linear-gradient(-60deg, #6c3 50%, #09f 50%);*/
         }
 
@@ -49,80 +49,78 @@
         {#    end of navbar#}
 
         {#    home#}
-        {% for data in userProfile %}
-            <div id="homePage">
-                <div class="container">
-                    <div style="min-height: 100vh;"
-                         class="row align-items-center justify-content-center align-content-center">
-                        <div class="col-12">
-                            {#                    Headline#}
-                            <div id="intro" class="text-center white-color intro animated fadeInDownBig">
-                                {{ data.intro }}
-                            </div>
-                            {#                        end of headline#}
-
-                            {#                    Introduction#}
-                            <div id="headline" class="text-center white-color headline">
-                                <p class="animated lightSpeedIn delay-1s">
-                                    {{ data.headline }}
-                                </p>
-                            </div>
-                            {#                        end of introduction#}
-
-                            {#                    Social links#}
-                            <div>
-                                <div id="social-links">
-                                    <ul class="d-flex justify-content-center align-items-center animated flipInY delay-2s">
-                                        {% if data.facebook %}
-                                            <li><a href="{{ data.facebook }}" target="_blank"><i
-                                                    class="fab fa-facebook white-color fa-3x social-link-hover"></i></a>
-                                            </li>
-                                        {% endif %}
-
-                                        {% if data.twitter %}
-                                            <li><a href="{{ data.twitter }}" target="_blank"><i
-                                                    class="fab fa-twitter white-color fa-3x social-link-hover"></i></a>
-                                            </li>
-                                        {% endif %}
-
-                                        {% if data.linkedin %}
-                                            <li><a href="{{ data.linkedin }}" target="_blank"><i
-                                                    class="fab fa-linkedin white-color fa-3x social-link-hover"></i></a>
-                                            </li>
-                                        {% endif %}
-
-                                        {% if data.instagram %}
-                                            <li><a href="{{ data.instagram }}" target="_blank"><i
-                                                    class="fab fa-instagram white-color fa-3x social-link-hover"></i></a>
-                                            </li>
-                                        {% endif %}
-
-                                        {% if data.github %}
-                                            <li><a href="{{ data.github }}" target="_blank"><i
-                                                    class="fab fa-github white-color fa-3x social-link-hover"></i></a>
-                                            </li>
-                                        {% endif %}
-
-                                        {% if data.email %}
-                                            <li><a href="mailto:{{ data.email }}" target="_blank"><i
-                                                    class="fas fa-envelope white-color fa-3x social-link-hover"></i></a>
-                                            </li>
-                                        {% endif %}
-
-                                        {% if data.telephone %}
-                                            <li><a href="tel:{{ data.telephone }}" target="_blank"><i
-                                                    class="fas fa-phone white-color fa-3x social-link-hover"></i></a>
-                                            </li>
-                                        {% endif %}
-                                    </ul>
-                                </div>
-                            </div>
-                            {#                        end of socila links#}
+        <div id="homePage">
+            <div class="container">
+                <div style="min-height: 100vh;"
+                     class="row align-items-center justify-content-center align-content-center">
+                    <div class="col-12">
+                        {#                    Headline#}
+                        <div id="intro" class="text-center white-color intro animated fadeInDownBig">
+                            {{ userProfile.intro }}
                         </div>
+                        {#                        end of headline#}
+
+                        {#                    Introduction#}
+                        <div id="headline" class="text-center white-color headline">
+                            <p class="animated lightSpeedIn delay-1s">
+                                {{ userProfile.headline }}
+                            </p>
+                        </div>
+                        {#                        end of introduction#}
+
+                        {#                    Social links#}
+                        <div>
+                            <div id="social-links">
+                                <ul class="d-flex justify-content-center align-items-center animated flipInY delay-2s">
+                                    {% if userProfile.facebook %}
+                                        <li><a href="{{ userProfile.facebook }}" target="_blank"><i
+                                                class="fab fa-facebook white-color fa-3x social-link-hover"></i></a>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if userProfile.twitter %}
+                                        <li><a href="{{ userProfile.twitter }}" target="_blank"><i
+                                                class="fab fa-twitter white-color fa-3x social-link-hover"></i></a>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if userProfile.linkedin %}
+                                        <li><a href="{{ userProfile.linkedin }}" target="_blank"><i
+                                                class="fab fa-linkedin white-color fa-3x social-link-hover"></i></a>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if userProfile.instagram %}
+                                        <li><a href="{{ userProfile.instagram }}" target="_blank"><i
+                                                class="fab fa-instagram white-color fa-3x social-link-hover"></i></a>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if userProfile.github %}
+                                        <li><a href="{{ userProfile.github }}" target="_blank"><i
+                                                class="fab fa-github white-color fa-3x social-link-hover"></i></a>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if userProfile.email %}
+                                        <li><a href="mailto:{{ userProfile.email }}" target="_blank"><i
+                                                class="fas fa-envelope white-color fa-3x social-link-hover"></i></a>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if userProfile.telephone %}
+                                        <li><a href="tel:{{ userProfile.telephone }}" target="_blank"><i
+                                                class="fas fa-phone white-color fa-3x social-link-hover"></i></a>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                        {#                        end of socila links#}
                     </div>
                 </div>
             </div>
-        {% endfor %}
+        </div>
         {#    end of home#}
 
     </section>
@@ -187,11 +185,9 @@
             <div class="row align-items-center justify-content-center" id="aboutRow" style="min-height: 85vh">
                 <div class="col-8 py-5 my-5">
                     <h1 id="aboutMe" class="text-center white-color">ABOUT ME</h1>
-                    {% for data in userProfile %}
                     <p class="text-center white-color">
-                        {{ data.about }}
+                        {{ userProfile.about }}
                     </p>
-                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -225,54 +221,52 @@
             <div class="row align-items-center" style="min-height: 20vh">
                 <div class="col-12 mt-5">
                     {#                    Social links#}
-                    {% for data in userProfile %}
-                        <div>
-                            <div id="social-links">
-                                <ul class="d-flex justify-content-around">
-                                    {% if data.facebook %}
-                                        <li><a href="{{ data.facebook }}" target="_blank"><i
-                                                class="fab fa-facebook white-color fa-3x social-link-hover"></i></a>
-                                        </li>
-                                    {% endif %}
+                    <div>
+                        <div id="social-links">
+                            <ul class="d-flex justify-content-around">
+                                {% if  userProfile.facebook %}
+                                    <li><a href="{{ userProfile.facebook }}" target="_blank"><i
+                                            class="fab fa-facebook white-color fa-3x social-link-hover"></i></a>
+                                    </li>
+                                {% endif %}
 
-                                    {% if data.twitter %}
-                                        <li><a href="{{ data.twitter }}" target="_blank"><i
-                                                class="fab fa-twitter white-color fa-3x social-link-hover"></i></a>
-                                        </li>
-                                    {% endif %}
+                                {% if userProfile.twitter %}
+                                    <li><a href="{{ userProfile.twitter }}" target="_blank"><i
+                                            class="fab fa-twitter white-color fa-3x social-link-hover"></i></a>
+                                    </li>
+                                {% endif %}
 
-                                    {% if data.linkedin %}
-                                        <li><a href="{{ data.linkedin }}" target="_blank"><i
-                                                class="fab fa-linkedin white-color fa-3x social-link-hover"></i></a>
-                                        </li>
-                                    {% endif %}
+                                {% if userProfile.linkedin %}
+                                    <li><a href="{{ userProfile.linkedin }}" target="_blank"><i
+                                            class="fab fa-linkedin white-color fa-3x social-link-hover"></i></a>
+                                    </li>
+                                {% endif %}
 
-                                    {% if data.instagram %}
-                                        <li><a href="{{ data.instagram }}" target="_blank"><i
-                                                class="fab fa-instagram white-color fa-3x social-link-hover"></i></a>
-                                        </li>
-                                    {% endif %}
+                                {% if userProfile.instagram %}
+                                    <li><a href="{{ userProfile.instagram }}" target="_blank"><i
+                                            class="fab fa-instagram white-color fa-3x social-link-hover"></i></a>
+                                    </li>
+                                {% endif %}
 
-                                    {% if data.github %}
-                                        <li><a href="{{ data.github }}" target="_blank"><i
-                                                class="fab fa-github white-color fa-3x social-link-hover"></i></a></li>
-                                    {% endif %}
+                                {% if userProfile.github %}
+                                    <li><a href="{{ userProfile.github }}" target="_blank"><i
+                                            class="fab fa-github white-color fa-3x social-link-hover"></i></a></li>
+                                {% endif %}
 
-                                    {% if data.email %}
-                                        <li><a href="mailto:{{ data.email }}" target="_blank"><i
-                                                class="fas fa-envelope white-color fa-3x social-link-hover"></i></a>
-                                        </li>
-                                    {% endif %}
+                                {% if userProfile.email %}
+                                    <li><a href="mailto:{{ userProfile.email }}" target="_blank"><i
+                                            class="fas fa-envelope white-color fa-3x social-link-hover"></i></a>
+                                    </li>
+                                {% endif %}
 
-                                    {% if data.telephone %}
-                                        <li><a href="tel:{{ data.telephone }}" target="_blank"><i
-                                                class="fas fa-phone white-color fa-3x social-link-hover"></i></a>
-                                        </li>
-                                    {% endif %}
-                                </ul>
-                            </div>
+                                {% if userProfile.telephone %}
+                                    <li><a href="tel:{{ userProfile.telephone }}" target="_blank"><i
+                                            class="fas fa-phone white-color fa-3x social-link-hover"></i></a>
+                                    </li>
+                                {% endif %}
+                            </ul>
                         </div>
-                    {% endfor %}
+                    </div>
                     {#                        end of socila links#}
                 </div>
                 <div class="col-12 white-color">
